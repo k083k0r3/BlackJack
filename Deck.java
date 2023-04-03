@@ -1,19 +1,29 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
-    private ArrayList<Card> deck = new ArrayList<>();
+    private ArrayList<Card> deck;
 
     public Deck(){
-        for (Rank rank : Rank.values()){
-            for (Suit suit : Suit.values()){
-                deck.add(new Card(rank, suit));
+        deck = new ArrayList<>();
+        for (Suit suit : Suit.values()){
+            for (Rank rank : Rank.values()){
+                addCard(new Card(rank, suit));
             }
         }
+        shuffleCards();
+    }
+
+    public void shuffleCards(){
+        Collections.shuffle(getDeck());
     }
 
     public ArrayList<Card> getDeck(){
-
         return deck;
+    }
+
+    public void addCard(Card card){
+        deck.add(card);
     }
 
 

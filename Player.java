@@ -14,12 +14,27 @@ public class Player {
     }
 
     public int calcHandValue(){
-        int value = 0; // dummy
+        // dummy
+        for (int i = 0; i < getHand().size(); i++){
+            handValue = getHand().get(i).getRank().value;
+        }
 
-        return value;
+        return handValue;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setHand(Card card) {
+        hand.add(card);
     }
 
     public void add(Card card){
 
+    }
+
+    public String toString(){
+        return "First Card : " + hand.get(0) + " Second Card: " + hand.get(1);
     }
 }
