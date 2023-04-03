@@ -1,6 +1,6 @@
 public class Card {
-    private Suit suit;
-    private Rank rank;
+    private final Suit suit;
+    private final Rank rank;
 
     public Card(Rank rank, Suit suit){
         this.rank = rank;
@@ -17,9 +17,9 @@ public class Card {
 
     @Override
     public String toString(){
-        return "Card [" + "Rank: " +
-                getRank() + " | Suit: " +
-                getSuit() + "]";
+        return "Card [" + getRank() + " of " +
+                getSuit() + "] \n";
     }
+
 
 }
